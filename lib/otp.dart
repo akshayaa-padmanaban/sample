@@ -42,7 +42,7 @@ class _OTPPageState extends State<OTPPage> with RouteAware {
         padding: EdgeInsets.all(24),
         child: Column(
           children: [
-            Text('Enter the 6‑digit code', style: Theme.of(context).textTheme.titleMedium),
+            Text('Enter the 6 digit code', style: Theme.of(context).textTheme.titleMedium),
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

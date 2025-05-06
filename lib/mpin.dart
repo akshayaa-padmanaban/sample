@@ -37,7 +37,7 @@ class _MPINPageState extends State<MPINPage> with RouteAware {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock_outline, size: 48, color: Colors.tealAccent[700]),
+            Icon(Icons.lock_outline, size: 48, color: Colors.teal),
             SizedBox(height: 16),
             TextField(
               controller: _ctrl,
@@ -48,7 +48,7 @@ class _MPINPageState extends State<MPINPage> with RouteAware {
               ],
               obscureText: true,
               textAlign: TextAlign.center,
-              decoration: InputDecoration(labelText: 'Enter 4‑digit MPIN'),
+              decoration: InputDecoration(labelText: 'Enter 4 digit MPIN'),
             ),
             SizedBox(height: 24),
             ElevatedButton(onPressed: _verify, child: Text('Verify MPIN')),

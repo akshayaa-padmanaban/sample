@@ -53,7 +53,6 @@ class _LoginPageState extends State<LoginPage> with RouteAware {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text('Welcome Back', style: Theme.of(context).textTheme.headlineSmall),
                   SizedBox(height: 24),
                   TextField(
                     controller: _usernameController,

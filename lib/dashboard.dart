@@ -11,12 +11,12 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(title: Text("Dashboard")),
       drawer: Drawer(
         child: Container(
-          color: Color(0xFF1E1E1E),
+          color: Color.fromARGB(255, 253, 248, 248),
           child: ListView(
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(color: Colors.tealAccent[700]),
-                child: Text('Hello, User!', style: TextStyle(fontSize: 20)),
+                child: Text('Menu', style: TextStyle(fontSize: 20)),
               ),
               ListTile(
                 leading: Icon(Icons.dashboard),
@@ -51,7 +51,7 @@ class DashboardPage extends StatelessWidget {
 
   Widget _CardItem(String title, IconData icon, VoidCallback onTap) {
     return Card(
-      color: Color(0xFF1E1E1E),
+      color: Color.fromARGB(255, 251, 247, 247),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: InkWell(
         onTap: onTap,
@@ -60,7 +60,7 @@ class DashboardPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 48, color: Colors.tealAccent[700]),
+              Icon(icon, size: 48, color: Colors.teal),
               SizedBox(height: 12),
               Text(title, style: TextStyle(fontSize: 16)),
             ],
