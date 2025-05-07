@@ -4,13 +4,13 @@ import 'main.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  LoginPageState createState() => LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> with RouteAware {
-  final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
-  bool _isLoading = false;
+class LoginPageState extends State<LoginPage> with RouteAware {
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool isLoading = false;
 
   @override
   void didChangeDependencies() {
@@ -21,21 +21,21 @@ class _LoginPageState extends State<LoginPage> with RouteAware {
   @override
   void dispose() {
     routeObserver.unsubscribe(this);
-    _usernameController.dispose();
-    _passwordController.dispose();
+    usernameController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
   @override
   void didPopNext() {
-    _usernameController.clear();
-    _passwordController.clear();
+    usernameController.clear();
+    passwordController.clear();
   }
 
-  Future<void> _onLogin() async {
-    setState(() => _isLoading = true);
+  Future<void> onLogin() async {
+    setState(() => isLoading = true);
     await Future.delayed(Duration(seconds: 1));
-    setState(() => _isLoading = false);
+    setState(() => isLoading = false);
     Navigator.pushNamed(context, '/verification');
   }
 
@@ -55,20 +55,20 @@ class _LoginPageState extends State<LoginPage> with RouteAware {
                 children: [
                   SizedBox(height: 24),
                   TextField(
-                    controller: _usernameController,
+                    controller: usernameController,
                     inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]'))],
                     decoration: InputDecoration(labelText: 'Username'),
                   ),
                   SizedBox(height: 16),
                   TextField(
-                    controller: _passwordController,
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(labelText: 'Password'),
                   ),
                   SizedBox(height: 24),
-                  _isLoading
+                  isLoading
                       ? Center(child: CircularProgressIndicator())
-                      : ElevatedButton(onPressed: _onLogin, child: Text('Log In')),
+                      : ElevatedButton(onPressed: onLogin, child: Text('Log In')),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
